@@ -5,5 +5,10 @@ export default async function Home() {
 
   const response = await fetch("https://api.github.com/users/RichardLirio");
   const user = await response.json();
-  return <pre>{JSON.stringify(user, null, 2)}</pre>;
+  return (
+    <div>
+      <h1>Home</h1>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
+    </div>
+  );
 }
