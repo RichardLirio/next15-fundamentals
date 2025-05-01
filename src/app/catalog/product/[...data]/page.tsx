@@ -1,6 +1,7 @@
 import * as React from "react";
 import { use } from "react";
 import AddToCartButton from "./add-to-cart-button";
+import Test from "./test";
 
 interface ProductProps {
   data: string[];
@@ -23,7 +24,9 @@ function Product({ params }: { params: Promise<ProductProps> }) {
       <p>Size: {size}</p>
       <p>color {color}</p>
 
-      <AddToCartButton />
+      <AddToCartButton>
+        <Test />
+      </AddToCartButton>
     </div>
   );
 }
