@@ -1,7 +1,6 @@
-"use client";
-
 import * as React from "react";
 import { use } from "react";
+import AddToCartButton from "./add-to-cart-button";
 
 interface ProductProps {
   data: string[];
@@ -18,19 +17,13 @@ function Product({ params }: { params: Promise<ProductProps> }) {
   const { data } = use(params);
   const [productId, size, color] = data;
 
-  function addToCart() {
-    console.log("Adicionou ao carrinho");
-  }
-
   return (
     <div>
       <p>Product id: {productId}</p>
       <p>Size: {size}</p>
       <p>color {color}</p>
 
-      <button onClick={addToCart} className="cursor-pointer">
-        Adicionar ao carrinho{" "}
-      </button>
+      <AddToCartButton />
     </div>
   );
 }
